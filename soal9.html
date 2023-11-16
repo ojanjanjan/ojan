@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Kembalian</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Kalkulator Kembalian</h1>
+    <p>Masukkan harga barang:</p>
+    <input type="number" id="hargaBarangInput" min="0" step="0.01" required>
+    <p>Masukkan jumlah uang yang dibayarkan:</p>
+    <input type="number" id="jumlahUangInput" min="0" step="0.01" required>
+    <button onclick="hitungKembalian()">Hitung Kembalian</button>
+
+    <p id="hasilKembalian"></p>
+
+    <script>
+        function hitungKembalian() {
+            var hargaBarang = parseFloat(document.getElementById('hargaBarangInput').value);
+            var jumlahUang = parseFloat(document.getElementById('jumlahUangInput').value);
+            var hasilKembalianElemen = document.getElementById('hasilKembalian');
+
+            if (isNaN(hargaBarang) || isNaN(jumlahUang) || hargaBarang < 0 || jumlahUang < 0) {
+                hasilKembalianElemen.textContent = "Masukkan harga dan jumlah uang yang valid.";
+                console.log("Masukkan harga dan jumlah uang yang valid.");
+                return;
+            }
+
+            var kembalian = jumlahUang - hargaBarang;
+
+            if (kembalian < 0) {
+                hasilKembalianElemen.textContent = "Uang yang dibayarkan kurang. Silakan bayar lebih banyak.";
+                console.log("Uang yang dibayarkan kurang. Silakan bayar lebih banyak.");
+            } else if (kembalian === 0) {
+                hasilKembalianElemen.textContent = "Tepat sekali, tidak ada kembalian.";
+                console.log("Tepat sekali, tidak ada kembalian.");
+            } else {
+                hasilKembalianElemen.textContent = "Kembalian yang harus diberikan: " + kembalian;
+                console.log("Kembalian yang harus diberikan: " + kembalian);
+            }
+        }
+    </script>
+</body>
+</html>

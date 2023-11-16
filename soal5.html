@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Aritmatika</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Kalkulator Aritmatika</h1>
+    <p>Masukkan angka pertama:</p>
+    <input type="number" id="angka1Input">
+    <p>Masukkan angka kedua:</p>
+    <input type="number" id="angka2Input">
+    <button onclick="hitungOperasi()">Hitung</button>
+    <p id="hasilOperasi"></p>
+
+    <script>
+        function hitungOperasi() {
+            var angka1 = parseFloat(document.getElementById('angka1Input').value);
+            var angka2 = parseFloat(document.getElementById('angka2Input').value);
+            var hasilOperasi = document.getElementById('hasilOperasi');
+
+            var penjumlahan = angka1 + angka2;
+            var perkalian = angka1 * angka2;
+            var pembagian = angka1 / angka2;
+            var pengurangan = angka1 - angka2;
+            var pemangkatan = Math.pow(angka1, angka2);
+            var modulus = angka1 % angka2;
+
+            hasilOperasi.textContent = "Hasil Pertambahan: " + penjumlahan + "\n" +
+                                      "Hasil Perkalian: " + perkalian + "\n" +
+                                      "Hasil Pembagian: " + pembagian + "\n" +
+                                      "Hasil Pengurangan: " + pengurangan + "\n" +
+                                      "Hasil Pemangkatan: " + pemangkatan + "\n" +
+                                      "Hasil Modulus: " + modulus;
+        }
+    </script>
+</body>
+</html>

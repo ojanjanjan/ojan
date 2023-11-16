@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Evaluasi Nilai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Program Evaluasi Nilai</h1>
+    <p>Masukkan nilai score:</p>
+    <input type="number" id="scoreInput">
+    <button onclick="evaluateScore()">Evaluasi</button>
+    <p id="resultMessage"></p>
+
+    <script>
+        function evaluateScore() {
+            var score = parseFloat(document.getElementById('scoreInput').value);
+            var resultMessage = document.getElementById('resultMessage');
+            
+            if (score >= 90) {
+                resultMessage.textContent = 'Selamat! Anda mendapatkan nilai A.';
+            } else if (score >= 80) {
+                resultMessage.textContent = 'Anda mendapatkan nilai B.';
+            } else if (score >= 70) {
+                resultMessage.textContent = 'Anda mendapatkan nilai C.';
+            } else if (score >= 60) {
+                resultMessage.textContent = 'Anda mendapatkan nilai D.';
+            } else {
+                resultMessage.textContent = 'Anda mendapatkan nilai E.';
+            }
+        }
+    </script>
+</body>
+</html>

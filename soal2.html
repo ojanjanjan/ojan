@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator Luas Persegi Panjang</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Kalkulator Luas Persegi Panjang</h1>
+    <p>Masukkan panjang:</p>
+    <input type="number" id="panjangInput">
+    <p>Masukkan lebar:</p>
+    <input type="number" id="lebarInput">
+    <button onclick="hitungLuas()">Hitung Luas</button>
+    <p>Luas Persegi Panjang:</p>
+    <p id="hasilLuas"></p>
+
+    <script>
+        function hitungLuas() {
+            var panjang = parseFloat(document.getElementById('panjangInput').value);
+            var lebar = parseFloat(document.getElementById('lebarInput').value);
+            var hasilLuas = panjang * lebar;
+            document.getElementById('hasilLuas').textContent = "Luas Persegi Panjang: " + hasilLuas;
+        }
+    </script>
+</body>
+</html>
